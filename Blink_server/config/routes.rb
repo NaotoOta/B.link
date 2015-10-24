@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions',
+    :passwords => 'users/passwords'
+  }
   resources :histories
   resources :cloths
-  devise_for :users
+ 
+  root to: 'users/dashboards#home' 
+  namespace :users do
+    resources :dashboards, only:[] do
+      collection do
+        get 'home'
+        post 'fetch'
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

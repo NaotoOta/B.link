@@ -28,7 +28,7 @@ class ClothsController < ApplicationController
     @cloth.user_id = current_user.id
     respond_to do |format|
       if @cloth.save
-        format.html { redirect_to @cloth, notice: 'Cloth was successfully created.' }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @cloth }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class ClothsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cloth_params
-      params.require(:cloth).permit(:name, :beacon_identification_key, :user_id, :url)
+      params.require(:cloth).permit(:name, :beacon_identification_key, :user_id, :url, :cloth_image)
     end
 end

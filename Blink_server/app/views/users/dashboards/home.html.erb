@@ -1,0 +1,13 @@
+<h1>home</h1>
+<p>こんにちわ<%= current_user.name %>さん</p>
+
+
+<%= link_to '服登録', new_cloth_path %>
+
+<% @cloths.each do |cloth| %>
+  <div class='item'>
+    <img src=<%= cloth.cloth_image%> width='150px'; height='150px'/>
+    <p><%= cloth.name %></p>
+    <a href=<%= cloth.url %>>商品ページへ</a>
+  </div>
+<% end %>

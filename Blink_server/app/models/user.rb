@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :cloths
   has_many :histories
+  mount_uploader :profile_image, ProfileImageUploader
 end
