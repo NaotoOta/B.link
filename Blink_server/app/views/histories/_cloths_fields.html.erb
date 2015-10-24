@@ -1,0 +1,4 @@
+<fieldset>
+  <%= f.label :cloth_id, 'name' %>
+  <%= f.collection_select(:cloth_id, @cloths, :id, :name) %>
+</fieldset>

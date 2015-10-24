@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cloth.name %>
+</p>
+
+<p>
+  <strong>Beacon identification key:</strong>
+  <%= @cloth.beacon_identification_key %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cloth.user %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @cloth.url %>
+</p>
+
+<%= link_to 'Edit', edit_cloth_path(@cloth) %> |
+<%= link_to 'Back', cloths_path %>

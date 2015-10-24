@@ -1,0 +1,29 @@
+<%= form_for(@cloth) do |f| %>
+  <% if @cloth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>
+
+      <ul>
+      <% @cloth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :beacon_identification_key %><br>
+    <%= f.text_field :beacon_identification_key %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
